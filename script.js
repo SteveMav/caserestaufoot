@@ -1,8 +1,10 @@
+const root = document.documentElement;
 const body = document.body;
 const header = document.querySelector("[data-header]");
-const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navLinks = Array.from(document.querySelectorAll("[data-nav] a"));
+const themeToggle = document.querySelector("[data-theme-toggle]");
+const themeIcon = document.querySelector("[data-theme-icon]");
 const bookingForm = document.querySelector("[data-booking-form]");
 const yearSlot = document.querySelector("[data-year]");
 
@@ -17,16 +19,27 @@ function closeNav() {
   navToggle?.setAttribute("aria-expanded", "false");
 }
 
+function setTheme(theme) {
+  root.dataset.theme = theme;
+  localStorage.setItem("la-case-theme", theme);
+  themeIcon.textContent = theme === "dark" ? "☾" : "☀";
+  themeToggle?.setAttribute("aria-label", theme === "dark" ? "Passer en mode clair" : "Passer en mode sombre");
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? "#17110d" : "#fff8f5");
+}
+
+setTheme(root.dataset.theme || "light");
+
+themeToggle?.addEventListener("click", () => {
+  setTheme(root.dataset.theme === "dark" ? "light" : "dark");
+});
+
 navToggle?.addEventListener("click", () => {
   const nextState = !body.classList.contains("nav-open");
   body.classList.toggle("nav-open", nextState);
   navToggle.setAttribute("aria-expanded", String(nextState));
 });
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", closeNav);
-});
-
+navLinks.forEach((link) => link.addEventListener("click", closeNav));
 window.addEventListener("scroll", setHeaderState, { passive: true });
 setHeaderState();
 

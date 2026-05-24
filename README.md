@@ -5,8 +5,8 @@ Demo statique non officielle creee comme support de prospection freelance pour L
 ## Contenu
 
 - `index.html` : site vitrine responsive avec CTA WhatsApp, itineraire, menu indicatif et bloc SEO local.
-- `styles.css` : direction visuelle inspiree de l'enseigne orange, de la cuisine africaine et du service 24h/24.
-- `script.js` : menu mobile, navigation active et formulaire qui prepare un message WhatsApp.
+- `styles.css` : direction visuelle Stitch "Authentic Hearth" avec mode clair/sombre gere par variables CSS.
+- `script.js` : menu mobile, navigation active, toggle clair/sombre persistant et formulaire WhatsApp.
 - `images/enseigne-la-case-resto-grill.jpg` : photo de l'enseigne fournie pour la proposition.
 
 ## Sources publiques utilisees
@@ -14,6 +14,12 @@ Demo statique non officielle creee comme support de prospection freelance pour L
 - Instagram public : <https://www.instagram.com/lacaserestogrill/>
 - Listing FindGlocal : <https://www.findglocal.com/CD/Kinshasa/663768520149533/La-case-resto-grill>
 - Capture fournie par l'utilisateur : enseigne, telephone, email, buffet 24h/24 et resultat Google.
+- Projet Stitch cree pour le design : `projects/12869401570319053312`, ecran `1df0eca3b7cf4eb9a6c8c7b02fde1514`.
+
+## Direction design
+
+Le site suit le systeme Stitch "Authentic Hearth" : ivoire, charbon, orange braise, vert profond, or discret, typographies Epilogue/Inter, cartes plates et boutons robustes.
+Le mode clair est pense comme papier/menu de jour; le mode sombre comme service de nuit 24h/24.
 
 ## Note ethique
 

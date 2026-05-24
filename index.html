@@ -1,35 +1,45 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,nofollow" />
-    <title>La Case Resto-Grill Kinshasa | Proposition de site restaurant 24h/24 à Gombe</title>
+    <meta name="theme-color" content="#fff8f5" />
+    <title>La Case Resto-Grill Kinshasa | Restaurant africain 24h/24 a Gombe</title>
     <meta
       name="description"
-      content="Proposition non officielle de site vitrine pour La Case Resto-Grill à Gombe, Kinshasa : cuisine africaine, grillades, buffet 24h/24, réservation et commande WhatsApp."
+      content="Proposition non officielle de site vitrine pour La Case Resto-Grill a Gombe, Kinshasa : cuisine africaine, buffet 20$, grillades, commande WhatsApp et service 24h/24."
     />
     <meta
       name="keywords"
-      content="La Case Resto-Grill, Kinshasa, Gombe, restaurant africain, buffet 24h/24, grillades Kinshasa, restaurant Gombe, livraison restaurant Kinshasa"
+      content="La Case Resto-Grill, Kinshasa, Gombe, restaurant africain, buffet 20$, buffet 24h/24, grillades Kinshasa, restaurant Gombe, livraison restaurant Kinshasa"
     />
     <meta property="og:title" content="La Case Resto-Grill Kinshasa - proposition de site" />
     <meta
       property="og:description"
-      content="Une maquette de site vitrine pour valoriser le buffet 24h/24, les grillades et l'adresse de La Case Resto-Grill à Gombe."
+      content="Une maquette de site vitrine pour valoriser le buffet 24h/24, les grillades et l'adresse de La Case Resto-Grill a Gombe."
     />
     <meta property="og:image" content="images/enseigne-la-case-resto-grill.jpg" />
     <meta property="og:type" content="website" />
     <link
       rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23d84b22'/%3E%3Ccircle cx='32' cy='32' r='22' fill='%23fff7ea'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial' font-size='21' font-weight='700' fill='%23211813'%3ELC%3C/text%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23d84b22'/%3E%3Ccircle cx='32' cy='32' r='22' fill='%23fff8f5'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial' font-size='21' font-weight='700' fill='%2317110d'%3ELC%3C/text%3E%3C/svg%3E"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (() => {
+        const stored = localStorage.getItem("la-case-theme");
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = stored || (systemDark ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? "#17110d" : "#fff8f5");
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
       {
@@ -42,6 +52,7 @@
           "name": "La Case Resto-Grill",
           "servesCuisine": "Cuisine africaine",
           "telephone": "+243812420260",
+          "email": "lacaserestaugrill@gmail.com",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Avenue De la Liberation N16, Ex 24 Novembre, Gombe",
@@ -55,27 +66,37 @@
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
+
     <header class="site-header" data-header>
       <a class="brand" href="#accueil" aria-label="La Case Resto-Grill accueil">
         <span class="brand-mark">LC</span>
-        <span>
+        <span class="brand-text">
           <strong>La Case</strong>
           <small>Resto-Grill</small>
         </span>
       </a>
+
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navigation" data-nav-toggle>
         <span></span>
         <span></span>
         <span></span>
         <span class="sr-only">Menu</span>
       </button>
+
       <nav id="navigation" class="nav-links" data-nav>
         <a href="#experience">Experience</a>
-        <a href="#menu">Menu</a>
+        <a href="#buffet">Buffet</a>
+        <a href="#offres">Offres</a>
         <a href="#ambiance">Ambiance</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="header-cta" href="tel:+243812420260">Appeler</a>
+
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Changer le theme" data-theme-toggle>
+          <span aria-hidden="true" data-theme-icon>☀</span>
+        </button>
+        <a class="header-cta" href="tel:+243812420260">Appeler</a>
+      </div>
     </header>
 
     <main id="contenu">
@@ -85,190 +106,206 @@
           src="images/enseigne-la-case-resto-grill.jpg"
           alt="Enseigne orange La Case Resto-Grill a Kinshasa"
         />
-        <div class="hero-shade"></div>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-          <p class="proposal-chip">Proposition de site - demo freelance</p>
-          <p class="eyebrow">Restaurant africain 24h/24 a Gombe</p>
+          <p class="demo-chip">Projet demo freelance</p>
+          <p class="hero-kicker">Restaurant africain 24h/24 a Gombe</p>
           <h1 id="hero-title">La Case Resto-Grill Kinshasa</h1>
           <p class="hero-copy">
-            Un festin africain a chaque morceau : buffet, grillades, boissons fraiches et service
-            continu pour les dejeuners, soirees et faims tardives de Gombe.
+            Buffet, grillades, planches a partager et service continu. Une presence digitale
+            claire pour transformer les recherches de Kinshasa en appels, commandes et itineraires.
           </p>
           <div class="hero-actions" aria-label="Actions principales">
-            <a class="btn btn-primary" href="https://wa.me/243812420260?text=Bonjour%20La%20Case%2C%20je%20souhaite%20commander%20ou%20reserver%20une%20table." target="_blank" rel="noreferrer">
+            <a class="btn btn-primary" href="https://wa.me/243812420260?text=Bonjour%20La%20Case%2C%20je%20souhaite%20commander%20ou%20reserver." target="_blank" rel="noreferrer">
               Commander sur WhatsApp
             </a>
-            <a class="btn btn-secondary" href="#menu">Voir le menu</a>
+            <a class="btn btn-outline" href="#buffet">Voir le buffet</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=La%20Case%20Resto-Grill%20Kinshasa%20Gombe%20Avenue%20De%20la%20Liberation%20N16" target="_blank" rel="noreferrer">
+              Itineraire
+            </a>
           </div>
-          <dl class="hero-facts" aria-label="Informations rapides">
-            <div>
-              <dt>Ouvert</dt>
-              <dd>24h/24 - 7J/7</dd>
-            </div>
-            <div>
-              <dt>Adresse</dt>
-              <dd>Av. De la Liberation N16, Gombe</dd>
-            </div>
-            <div>
-              <dt>Telephone</dt>
-              <dd>+243 812 420 260</dd>
-            </div>
-          </dl>
+        </div>
+      </section>
+
+      <section class="info-strip" aria-label="Informations essentielles">
+        <div class="strip-inner">
+          <span>24h/24 & 7J/7</span>
+          <span>Buffet a 20 USD</span>
+          <span>Gombe / Face Assanef</span>
+          <span>+243 812 420 260</span>
         </div>
       </section>
 
       <section id="experience" class="section intro-section" aria-labelledby="experience-title">
         <div class="section-inner intro-grid">
-          <div class="section-copy">
-            <p class="eyebrow">Pourquoi ce site ferait vendre</p>
-            <h2 id="experience-title">Transformer une bonne adresse locale en reflexe digital.</h2>
-            <p>
-              La Case a deja des signaux forts : une enseigne visible, une promesse 24h/24,
-              une localisation claire a Gombe et une cuisine africaine identifiable. Le site sert
-              a convertir ces signaux en commandes, reservations, itineraires et avis clients.
-            </p>
+          <div>
+            <p class="eyebrow">Authentic Hearth</p>
+            <h2 id="experience-title">Un site qui garde la chaleur de l'enseigne et rend l'offre simple.</h2>
           </div>
-          <div class="metrics-row" aria-label="Signaux publics a valoriser">
-            <article class="metric-card">
-              <strong>24h/24</strong>
-              <span>Service continu a mettre en avant pour les recherches tardives.</span>
-            </article>
-            <article class="metric-card">
-              <strong>20$</strong>
-              <span>Buffet quotidien repere dans les publications publiques.</span>
-            </article>
-            <article class="metric-card">
-              <strong>Gombe</strong>
-              <span>Adresse utile pour capter les travailleurs, voyageurs et groupes.</span>
-            </article>
+          <div class="intro-copy">
+            <p>
+              Le monde visuel retenu par Stitch : ivoire, charbon, orange de braise, vert profond
+              et or discret. Il reprend l'energie de la grande enseigne orange, tout en donnant a
+              La Case une structure nette pour Google, Maps, WhatsApp et les clients pressés.
+            </p>
           </div>
         </div>
       </section>
 
-      <section id="menu" class="section menu-section" aria-labelledby="menu-title">
+      <section id="buffet" class="section buffet-section" aria-labelledby="buffet-title">
+        <div class="section-inner buffet-layout">
+          <div class="buffet-card">
+            <span class="card-label">Chaque jour</span>
+            <h2 id="buffet-title">Buffet La Case</h2>
+            <p>
+              Une formule directe a mettre en avant pour les dejeuners, diners, after-work et
+              faims tardives de Gombe.
+            </p>
+            <strong>20$</strong>
+          </div>
+          <div class="buffet-copy">
+            <p class="eyebrow">Lia na faux lard !</p>
+            <h3>Le reflexe 24h/24 pour manger africain a Gombe.</h3>
+            <p>
+              Les posts publics parlent d'une experience culinaire africaine authentique et
+              savoureuse, avec un cadre raffine et une ambiance chaleureuse. La page doit rendre
+              ce message visible au premier coup d'oeil.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="offres" class="section offers-section" aria-labelledby="offers-title">
         <div class="section-inner">
           <div class="section-heading">
-            <p class="eyebrow">Carte a valider avec l'equipe</p>
-            <h2 id="menu-title">Des offres simples a commander et partager.</h2>
+            <p class="eyebrow">Nos offres signature</p>
+            <h2 id="offers-title">Des choix concrets a commander, partager ou reserver.</h2>
           </div>
-          <div class="menu-grid">
-            <article class="menu-item featured">
-              <div>
-                <span class="menu-label">Buffet</span>
-                <h3>Buffet La Case</h3>
-                <p>Une formule quotidienne pour dejeuner, diner ou manger tard a Gombe.</p>
-              </div>
+          <div class="offers-grid">
+            <article class="offer-card">
+              <span class="card-label">Buffet</span>
+              <h3>Buffet La Case</h3>
+              <p>Le festin quotidien, simple a comprendre, parfait pour attirer les recherches locales.</p>
               <strong>20$</strong>
             </article>
-            <article class="menu-item">
-              <span class="menu-label">VIP jeudi</span>
+            <article class="offer-card">
+              <span class="card-label">Combo</span>
+              <h3>Combo La Case</h3>
+              <p>Le combo genereux repere dans les posts publics : savoureux, direct, rassasiant.</p>
+              <strong>40.000 FC</strong>
+            </article>
+            <article class="offer-card">
+              <span class="card-label">VIP</span>
               <h3>Plateau Signature</h3>
               <p>Boeuf, poulet, porc, bananes frites ou chikwangue, selon disponibilite.</p>
+              <strong>Jeudi</strong>
             </article>
-            <article class="menu-item">
-              <span class="menu-label">Grill</span>
-              <h3>Grillades du chef</h3>
-              <p>Des assiettes genereuses pour les groupes, after-work et soirees.</p>
+            <article class="offer-card">
+              <span class="card-label">Chef</span>
+              <h3>Planche magique</h3>
+              <p>Un angle visuel fort pour les groupes, week-ends, after-work et contenus sociaux.</p>
+              <strong>Grill</strong>
             </article>
-            <article class="menu-item">
-              <span class="menu-label">Fraicheur</span>
+            <article class="offer-card">
+              <span class="card-label">Fraicheur</span>
               <h3>Boissons fraiches</h3>
-              <p>Jus, sodas et selections champagne pour accompagner les plats.</p>
+              <p>Une categorie utile pour completer commandes, repas de groupe et offres champagne.</p>
+              <strong>Bar</strong>
             </article>
-            <article class="menu-item">
-              <span class="menu-label">Commande</span>
-              <h3>Livraison rapide</h3>
-              <p>Un parcours WhatsApp direct pour commander sans chercher le numero.</p>
+            <article class="offer-card">
+              <span class="card-label">Commande</span>
+              <h3>WhatsApp rapide</h3>
+              <p>Un parcours direct pour reserver, commander ou demander le menu sans friction.</p>
+              <strong>1 clic</strong>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="ambiance" class="section story-section" aria-labelledby="ambiance-title">
-        <div class="section-inner story-grid">
-          <div class="visual-panel">
+      <section id="ambiance" class="section ambiance-section" aria-labelledby="ambiance-title">
+        <div class="section-inner ambiance-grid">
+          <div class="photo-panel">
             <img
               src="images/enseigne-la-case-resto-grill.jpg"
-              alt="Panneau La Case Resto-Grill indiquant buffet 24h sur 24"
+              alt="Panneau La Case Resto-Grill avec buffet 24h sur 24"
             />
           </div>
-          <div class="story-content">
-            <p class="eyebrow">Lia na faux lard</p>
-            <h2 id="ambiance-title">Un cadre chaud, direct, local, facile a trouver.</h2>
+          <div>
+            <p class="eyebrow">OKO ZANGA PE OYO ?</p>
+            <h2 id="ambiance-title">Chez La Case, on ne mange pas... on vit l'experience.</h2>
             <p>
-              L'identite de La Case est tres lisible depuis la rue : orange franc, promesse
-              africaine, buffet 24h/24, telephone visible. La maquette garde ce cote populaire et
-              energique, puis lui ajoute une structure web premium pour rassurer avant l'appel.
+              L'ambiance vendue publiquement est chaude, raffinee et populaire a la fois. Le site
+              propose donc une experience lisible : dejeuner business, dinner tardif, sortie entre
+              amis, repas de groupe, et commande rapide depuis le telephone.
             </p>
-            <div class="story-list">
-              <span>Dejeuner business a Gombe</span>
-              <span>Sorties entre amis</span>
-              <span>Commandes tardives</span>
-              <span>Repas de groupe</span>
+            <div class="tag-list" aria-label="Occasions">
+              <span>Lunch a Gombe</span>
+              <span>After-work</span>
+              <span>Late-night</span>
+              <span>Groupes</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section proof-section" aria-labelledby="proof-title">
-        <div class="section-inner proof-layout">
-          <div class="section-copy">
-            <p class="eyebrow">Preuves publiques</p>
-            <h2 id="proof-title">Rendre visibles les preuves qui existent deja.</h2>
+      <section class="section trust-section" aria-labelledby="trust-title">
+        <div class="section-inner trust-grid">
+          <div>
+            <p class="eyebrow">Preuves a centraliser</p>
+            <h2 id="trust-title">Faire travailler les signaux deja publics.</h2>
             <p>
-              Les publications publiques montrent une activite recente, l'offre buffet, le service
-              7J/7 et l'appel aux avis Google. Le site peut centraliser ces preuves au lieu de les
-              laisser dispersees entre Instagram, Facebook, Google et les captures partagees.
+              Aujourd'hui, l'information est eparpillee entre les posts, Google, Instagram,
+              Facebook et l'enseigne. Le site peut regrouper les preuves et guider vers l'avis,
+              l'appel ou l'itineraire.
             </p>
           </div>
-          <div class="proof-list">
+          <div class="proof-grid">
             <article>
               <strong>4,2/5</strong>
-              <span>Note Google visible dans la capture fournie, avec 13 avis.</span>
+              <span>Note Google visible dans la capture fournie.</span>
             </article>
             <article>
-              <strong>+1,2k</strong>
-              <span>Abonnes Facebook indiques dans le resultat Google partage.</span>
+              <strong>13 avis</strong>
+              <span>Base a renforcer avec un bouton avis.</span>
             </article>
             <article>
-              <strong>+560</strong>
-              <span>Abonnes Instagram affiches dans le resultat public.</span>
+              <strong>@lacaserestogrill</strong>
+              <span>Compte Instagram public a relier clairement.</span>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section seo-section" aria-labelledby="seo-title">
-        <div class="section-inner seo-box">
-          <p class="eyebrow">SEO local et IA</p>
-          <h2 id="seo-title">Une page lisible par Google, Maps et les assistants IA.</h2>
+      <section class="section geo-section" aria-labelledby="geo-title">
+        <div class="section-inner geo-box">
+          <p class="eyebrow">SEO local + IA</p>
+          <h2 id="geo-title">Une fiche claire pour Google, Maps et les assistants IA.</h2>
           <p>
-            La Case Resto-Grill est un restaurant africain et resto-grill situe a Gombe, Kinshasa,
-            sur l'Avenue De la Liberation N16, Ex 24 Novembre, reference saut de mouton Assanef.
-            Le restaurant met en avant une cuisine africaine savoureuse, un buffet 24h/24, des
-            grillades, des boissons fraiches, des commandes par telephone ou WhatsApp et une
-            experience adaptee aux repas sur place, groupes et livraisons.
+            Situe a Gombe, Kinshasa, sur l'Avenue De la Liberation N16, ex 24 Novembre, en face
+            du saut de mouton Assanef, La Case Resto-Grill est une destination culinaire africaine
+            ouverte 24h/24. Le restaurant met en avant des grillades, un buffet quotidien, des
+            boissons fraiches, des offres VIP et une commande simple par telephone ou WhatsApp.
           </p>
         </div>
       </section>
 
       <section id="contact" class="section contact-section" aria-labelledby="contact-title">
         <div class="section-inner contact-grid">
-          <div class="contact-copy">
-            <p class="eyebrow">Reservation et commande</p>
-            <h2 id="contact-title">Une action claire, sans backend complique.</h2>
+          <div>
+            <p class="eyebrow">Contact direct</p>
+            <h2 id="contact-title">Reservation, commande, itineraire : tout en un geste.</h2>
             <p>
-              Le formulaire prepare un message WhatsApp. Pour la version finale, il suffira
-              d'ajouter les plats confirmes, les horaires officiels et les photos professionnelles.
+              Cette version demo prepare un message WhatsApp. Pour la version finale, on valide
+              les plats, les prix, les photos officielles et les destinataires de commande.
             </p>
             <div class="contact-actions">
               <a class="btn btn-primary" href="tel:+243812420260">Appeler maintenant</a>
-              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=La%20Case%20Resto-Grill%20Kinshasa%20Gombe%20Avenue%20De%20la%20Liberation%20N16" target="_blank" rel="noreferrer">
-                Itineraire
+              <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=La%20Case%20Resto-Grill%20Kinshasa%20Gombe%20Avenue%20De%20la%20Liberation%20N16" target="_blank" rel="noreferrer">
+                Ouvrir l'itineraire
               </a>
             </div>
             <address>
-              Avenue De la Liberation N16 (Ex 24 Novembre), Gombe, Kinshasa<br />
+              Av. De la Liberation N16 (Ex 24 Novembre), Gombe, Kinshasa<br />
               Ref. en face du saut de mouton Assanef<br />
               <a href="mailto:lacaserestaugrill@gmail.com">lacaserestaugrill@gmail.com</a>
             </address>

@@ -1,5 +1,7 @@
 /mailsender/
 /artifacts/
+/research/
+/stitch-assets/
 .env
 *.log
 node_modules/
