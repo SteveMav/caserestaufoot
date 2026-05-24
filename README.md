@@ -4,7 +4,7 @@ Demo statique non officielle creee comme support de prospection freelance pour L
 
 ## Contenu
 
-- `index.html` : site vitrine responsive avec CTA WhatsApp, itineraire, menu indicatif et bloc SEO local.
+- `index.html` : site vitrine responsive avec CTA WhatsApp, itineraire, menu indicatif et bloc de visibilite locale.
 - `styles.css` : direction visuelle Stitch "Authentic Hearth" avec mode clair/sombre gere par variables CSS.
 - `script.js` : menu mobile, navigation active, toggle clair/sombre persistant et formulaire WhatsApp.
 - `images/enseigne-la-case-resto-grill.jpg` : photo de l'enseigne fournie pour la proposition.

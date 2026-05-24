@@ -455,7 +455,7 @@ h1 {
 .ambiance-grid p,
 .trust-grid p,
 .contact-grid p,
-.geo-box p {
+.visibility-box p {
   margin: 18px 0 0;
   color: var(--muted);
   font-size: 1rem;
@@ -467,7 +467,7 @@ h1 {
 .ambiance-grid h2,
 .trust-grid h2,
 .contact-grid h2,
-.geo-box h2 {
+.visibility-box h2 {
   margin-top: 16px;
   color: var(--text);
   font-size: clamp(2rem, 4vw, 3.3rem);
@@ -529,7 +529,7 @@ h1 {
 
 .offer-card,
 .proof-grid article,
-.geo-box,
+.visibility-box,
 .booking-form {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -621,11 +621,11 @@ h1 {
   font-weight: 700;
 }
 
-.geo-section {
+.visibility-section {
   background: var(--inverse);
 }
 
-.geo-box {
+.visibility-box {
   color: var(--inverse-text);
   background:
     linear-gradient(135deg, rgba(216, 75, 34, 0.18), transparent 50%),
@@ -634,18 +634,18 @@ h1 {
   padding: 42px;
 }
 
-.geo-box .eyebrow {
+.visibility-box .eyebrow {
   color: var(--gold);
   background: rgba(229, 185, 73, 0.12);
   border-color: rgba(229, 185, 73, 0.28);
 }
 
-.geo-box h2,
-.geo-box p {
+.visibility-box h2,
+.visibility-box p {
   color: var(--inverse-text);
 }
 
-.geo-box p {
+.visibility-box p {
   max-width: 920px;
   opacity: 0.82;
 }
@@ -940,7 +940,7 @@ address a {
     grid-template-columns: 1fr;
   }
 
-  .geo-box,
+  .visibility-box,
   .booking-form {
     padding: 24px;
   }
