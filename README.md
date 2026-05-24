@@ -2,6 +2,8 @@
 
 Demo statique non officielle creee comme support de prospection freelance pour La Case Resto-Grill a Gombe, Kinshasa.
 
+Site public : https://stevemav.github.io/caserestaufoot/
+
 ## Contenu
 
 - `index.html` : site vitrine responsive avec CTA WhatsApp, itineraire, menu indicatif et bloc de visibilite locale.
